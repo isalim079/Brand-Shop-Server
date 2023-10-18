@@ -3,6 +3,11 @@ import Home from "../Home/Home/Home";
 import AddProduct from "../AddProduct/AddProduct";
 import ErrorPage from "./ErrorPage";
 import Home2 from "../Home/Home/Home2";
+import Login from "../Login/Login";
+import PrivateRoute from "./PrivateRoute";
+import Register from "../Register/Register";
+import SixBrand from "../SixBrand/SixBrand";
+
 
 const Router = createBrowserRouter([
     {
@@ -13,14 +18,32 @@ const Router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home2></Home2>,
-                loader: () => fetch('/brandNames.json')
+                loader: () => fetch("/brandNames.json"),
             },
             {
                 path: "/addProducts",
-                element: <AddProduct></AddProduct>
+                element: (
+                    <PrivateRoute>
+                        <AddProduct></AddProduct>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "/login",
+                element: <Login></Login>,
+            },
+            {
+                path: "/register",
+                element: <Register></Register>,
+            },
+            {
+                path: '/sixBrands/:brands',
+                element: <SixBrand></SixBrand>,
+                loader: () => fetch("http://localhost:4001/brands"),
             }
-        ]
-    }
-])
+           
+        ],
+    },
+]);
 
-export default Router
+export default Router;

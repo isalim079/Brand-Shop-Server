@@ -12,10 +12,11 @@ const AddProduct = () => {
         const form = e.target;
         const name = form.name.value;
         const image = form.image.value;
+        const bannerImage = form.bannerImage.value;
         const productType = form.productType.value;
         const price = form.price.value;
         const description = form.description.value;
-        const productDetails = { name, image, productType, price, description, brand, rating }
+        const productDetails = { name, image, productType, price, description, brand, rating, bannerImage }
 
         fetch("http://localhost:4001/brands", {
             method: "POST",
@@ -69,6 +70,22 @@ const AddProduct = () => {
                                 name="image"
                                 type="text"
                                 placeholder="Product image URL"
+                                className="input input-bordered w-full"
+                            />
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-lg font-bold">
+                                {" "}
+                                Enter advertisement banner image URL
+                            </span>
+                        </label>
+                        <label className="input-group">
+                            <input
+                                name="bannerImage"
+                                type="text"
+                                placeholder="Advertisement banner image URL"
                                 className="input input-bordered w-full"
                             />
                         </label>
