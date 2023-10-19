@@ -21,7 +21,7 @@ const BrandCategory = ({ brandCategory }) => {
                     data-aos="flip-right"
                 >
                     <figure>
-                        <img src={image} alt="" />
+                        <img className="md:h-72" src={image} alt="" />
                     </figure>
                     <div className="card-body">
                         <h2 className="card-title hover:pl-32 hover:py-3 hover:bg-orange-600 hover:text-white hover:cursor-pointer hover:duration-500 hover:rounded-md">

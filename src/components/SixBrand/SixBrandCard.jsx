@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -10,7 +10,7 @@ const SixBrandCard = ({ brandProduct }) => {
     const { brands } = useParams();
     // console.log(brands);
 
-    const { name, brand, image, productType, price, rating } = brandProduct;
+    const { name, brand, image, productType, price, rating, _id } = brandProduct;
 
     useEffect(() => {
         Aos.init({
@@ -62,9 +62,13 @@ const SixBrandCard = ({ brandProduct }) => {
                                         <p></p>
                                         <div className="card-actions justify-between items-center">
                                             <div>
+                                                <Link to={`/productDetails/${_id}`}>
+                                                
                                                 <button className="px-4 py-2 bg-orange-500 rounded-md text-white mr-5 hover:bg-orange-600">
                                                     Details
                                                 </button>
+                                                
+                                                </Link>
                                                 <button className="px-4 py-2 bg-orange-500 rounded-md text-white hover:bg-orange-600">
                                                     Update
                                                 </button>
@@ -89,12 +93,7 @@ const SixBrandCard = ({ brandProduct }) => {
                         </div>
                     </>
                 ) : (
-                    <p
-                        className="md:text-3xl font-poppins text-center mt-10 border-4 border-red-700 py-5"
-                        data-aos="fade-up"
-                    >
-                        Product will be available soon...
-                    </p>
+                   ""
                 )}
             </div>
         </div>

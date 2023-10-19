@@ -7,7 +7,8 @@ import Login from "../Login/Login";
 import PrivateRoute from "./PrivateRoute";
 import Register from "../Register/Register";
 import SixBrand from "../SixBrand/SixBrand";
-
+import ProductDetails from "../SixBrand/ProductDetails";
+import AddToCart from "../AddToCart/AddToCart";
 
 const Router = createBrowserRouter([
     {
@@ -37,11 +38,28 @@ const Router = createBrowserRouter([
                 element: <Register></Register>,
             },
             {
-                path: '/sixBrands/:brands',
+                path: "/sixBrands/:brands",
                 element: <SixBrand></SixBrand>,
                 loader: () => fetch("http://localhost:4001/brands"),
-            }
-           
+            },
+            {
+                path: "/productDetails/:brands",
+                element: (
+                    <PrivateRoute>
+                        <ProductDetails></ProductDetails>
+                    </PrivateRoute>
+                ),
+                loader: () => fetch("http://localhost:4001/brands"),
+            },
+            {
+                path: "/myCarts",
+                element: (
+                    <PrivateRoute>
+                        <AddToCart></AddToCart>
+                    </PrivateRoute>
+                ),
+                loader: () => fetch("http://localhost:4001/brandShopCarts")
+            },
         ],
     },
 ]);

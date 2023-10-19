@@ -18,8 +18,6 @@ const SixBrand = () => {
     );
     console.log(brandFilter);
 
-    // const {_id, name, image, productType, price, description, brand, rating, bannerImage} = brandProducts
-
     useEffect(() => {
         Aos.init({
             duration: 1000,
@@ -46,18 +44,6 @@ const SixBrand = () => {
                             </div>
                             <div>
                                 <img src={brandFilter[2]?.bannerImage} />
-                                <p className="legend cursor-pointer">
-                                    Have fun with your desire product
-                                </p>
-                            </div>
-                            <div>
-                                <img src={brandFilter[3]?.bannerImage} />
-                                <p className="legend cursor-pointer">
-                                    Have fun with your desire product
-                                </p>
-                            </div>
-                            <div>
-                                <img src={brandFilter[4]?.bannerImage} />
                                 <p className="legend cursor-pointer">
                                     Have fun with your desire product
                                 </p>
