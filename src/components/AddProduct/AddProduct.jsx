@@ -3,9 +3,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AddProduct = () => {
-
-    const [brand, setBrand] = useState()
-    const [rating, setRating] = useState()
+    const [brand, setBrand] = useState();
+    const [rating, setRating] = useState();
 
     const handleAddProduct = (e) => {
         e.preventDefault();
@@ -16,26 +15,35 @@ const AddProduct = () => {
         const productType = form.productType.value;
         const price = form.price.value;
         const description = form.description.value;
-        const productDetails = { name, image, productType, price, description, brand, rating, bannerImage }
+        const productDetails = {
+            name,
+            image,
+            productType,
+            price,
+            description,
+            brand,
+            rating,
+            bannerImage,
+        };
 
         fetch("http://localhost:4001/brands", {
             method: "POST",
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
             },
-            body: JSON.stringify(productDetails)
+            body: JSON.stringify(productDetails),
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            if(data.insertedId){
-                toast.success("You have successfully added your product",{
-                    position: "top-center"
-                })
-            }
-            form.reset()
-        })
-    }
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                    toast.success("You have successfully added your product", {
+                        position: "top-center",
+                    });
+                }
+                form.reset();
+            });
+    };
     return (
         <div>
             <form onSubmit={handleAddProduct}>
@@ -102,7 +110,9 @@ const AddProduct = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer">
                                     <input
-                                        onChange={e => setBrand(e.target.value)}
+                                        onChange={(e) =>
+                                            setBrand(e.target.value)
+                                        }
                                         type="radio"
                                         name="brand"
                                         value="apple"
@@ -116,7 +126,9 @@ const AddProduct = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer">
                                     <input
-                                        onChange={e => setBrand(e.target.value)}
+                                        onChange={(e) =>
+                                            setBrand(e.target.value)
+                                        }
                                         type="radio"
                                         name="brand"
                                         value="samsung"
@@ -130,7 +142,9 @@ const AddProduct = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer">
                                     <input
-                                        onChange={e => setBrand(e.target.value)}
+                                        onChange={(e) =>
+                                            setBrand(e.target.value)
+                                        }
                                         type="radio"
                                         name="brand"
                                         value="xiaomi"
@@ -144,7 +158,9 @@ const AddProduct = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer">
                                     <input
-                                        onChange={e => setBrand(e.target.value)}
+                                        onChange={(e) =>
+                                            setBrand(e.target.value)
+                                        }
                                         type="radio"
                                         name="brand"
                                         value="google"
@@ -158,7 +174,9 @@ const AddProduct = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer">
                                     <input
-                                        onChange={e => setBrand(e.target.value)}
+                                        onChange={(e) =>
+                                            setBrand(e.target.value)
+                                        }
                                         type="radio"
                                         name="brand"
                                         value="microsoft"
@@ -172,7 +190,9 @@ const AddProduct = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer">
                                     <input
-                                        onChange={e => setBrand(e.target.value)}
+                                        onChange={(e) =>
+                                            setBrand(e.target.value)
+                                        }
                                         type="radio"
                                         name="brand"
                                         value="sony"
@@ -246,37 +266,35 @@ const AddProduct = () => {
                         </label>
                         <div className="rating">
                             <input
-                                onChange={e => setRating(e.target.value)}
+                                onChange={(e) => setRating(e.target.value)}
                                 type="radio"
                                 name="rating"
                                 value="1 star"
                                 className="mask mask-star-2 bg-red-500"
                             />
                             <input
-                                onChange={e => setRating(e.target.value)}
+                                onChange={(e) => setRating(e.target.value)}
                                 type="radio"
                                 name="rating"
                                 value="2 star"
                                 className="mask mask-star-2 bg-red-500"
-                                
                             />
                             <input
-                                onChange={e => setRating(e.target.value)}
+                                onChange={(e) => setRating(e.target.value)}
                                 type="radio"
                                 name="rating"
                                 value="3 star"
                                 className="mask mask-star-2 bg-red-500"
-                                
                             />
                             <input
-                                onChange={e => setRating(e.target.value)}
+                                onChange={(e) => setRating(e.target.value)}
                                 type="radio"
                                 name="rating"
                                 value="4 star"
                                 className="mask mask-star-2 bg-red-500"
                             />
                             <input
-                                onChange={e => setRating(e.target.value)}
+                                onChange={(e) => setRating(e.target.value)}
                                 type="radio"
                                 name="rating"
                                 value="5 star"

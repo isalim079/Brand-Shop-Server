@@ -29,26 +29,49 @@ const SixBrand = () => {
     return (
         <div>
             <div>
-                <Carousel>
-                    <div>
-                        <img src={brandFilter[0]?.bannerImage} />
-                        <p className="legend cursor-pointer">
-                            Make your dreams come true
-                        </p>
-                    </div>
-                    <div>
-                        <img src={brandFilter[1]?.bannerImage} />
-                        <p className="legend cursor-pointer">
-                            Choose your own product
-                        </p>
-                    </div>
-                    <div>
-                        <img src={brandFilter[2]?.bannerImage} />
-                        <p className="legend cursor-pointer">
-                            Have fun with your desire product
-                        </p>
-                    </div>
-                </Carousel>
+                {brandFilter[0] ? (
+                    <>
+                        <Carousel>
+                            <div>
+                                <img src={brandFilter[0]?.bannerImage} />
+                                <p className="legend cursor-pointer">
+                                    Make your dreams come true
+                                </p>
+                            </div>
+                            <div>
+                                <img src={brandFilter[1]?.bannerImage} />
+                                <p className="legend cursor-pointer">
+                                    Choose your own product
+                                </p>
+                            </div>
+                            <div>
+                                <img src={brandFilter[2]?.bannerImage} />
+                                <p className="legend cursor-pointer">
+                                    Have fun with your desire product
+                                </p>
+                            </div>
+                            <div>
+                                <img src={brandFilter[3]?.bannerImage} />
+                                <p className="legend cursor-pointer">
+                                    Have fun with your desire product
+                                </p>
+                            </div>
+                            <div>
+                                <img src={brandFilter[4]?.bannerImage} />
+                                <p className="legend cursor-pointer">
+                                    Have fun with your desire product
+                                </p>
+                            </div>
+                        </Carousel>
+                    </>
+                ) : (
+                    <p
+                        className="md:text-5xl font-poppins text-center mt-10 border-4 border-sky-700 py-5"
+                        data-aos="fade-up"
+                    >
+                        Product will be available soon...
+                    </p>
+                )}
             </div>
             <div>
                 <h2

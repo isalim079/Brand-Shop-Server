@@ -18,7 +18,7 @@ const BrandCategory = ({ brandCategory }) => {
             <Link to={`/sixBrands/${brands}`}>
                 <div
                     className="card card-compact bg-base-100 shadow-xl font-poppins uppercase cursor-pointer"
-                    data-aos="zoom-in-down"
+                    data-aos="flip-right"
                 >
                     <figure>
                         <img src={image} alt="" />

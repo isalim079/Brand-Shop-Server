@@ -10,8 +10,7 @@ const SixBrandCard = ({ brandProduct }) => {
     const { brands } = useParams();
     // console.log(brands);
 
-    const { name, brand, image, productType, price, rating } =
-        brandProduct;
+    const { name, brand, image, productType, price, rating } = brandProduct;
 
     useEffect(() => {
         Aos.init({
@@ -90,7 +89,12 @@ const SixBrandCard = ({ brandProduct }) => {
                         </div>
                     </>
                 ) : (
-                    ""
+                    <p
+                        className="md:text-3xl font-poppins text-center mt-10 border-4 border-red-700 py-5"
+                        data-aos="fade-up"
+                    >
+                        Product will be available soon...
+                    </p>
                 )}
             </div>
         </div>
