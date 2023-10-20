@@ -36,7 +36,7 @@ const AddToCart = () => {
                         if (data.deletedCount > 0) {
                             Swal.fire(
                                 "Deleted!",
-                                "Your coffee has been deleted.",
+                                "Your product has been removed from cart list.",
                                 "success"
                             );
                             const remaining = cartProducts.filter(
