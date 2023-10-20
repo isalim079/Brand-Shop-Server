@@ -52,7 +52,7 @@ const AddToCart = () => {
     return (
         <div>
             <div className="font-poppins">
-                <div className="overflow-hidden max-w-screen-xl mx-auto mt-10">
+                <div className="overflow-x-auto max-w-screen-xl mx-auto mt-10">
                     <table className="table">
                         {/* head */}
                         <thead>

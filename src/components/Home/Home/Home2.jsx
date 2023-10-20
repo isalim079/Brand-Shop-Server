@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import Camera from "../ExtraSection/Camera";
 import AppleWatch from "../ExtraSection/AppleWatch";
 
+
 const Home2 = () => {
     const brandCategories = useLoaderData();
 

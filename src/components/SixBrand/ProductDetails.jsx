@@ -78,24 +78,24 @@ const ProductDetails = () => {
     };
 
     return (
-        <div className=" h-screen flex items-center bg-[url('https://i.ibb.co/ysdL8Nv/card-Details-BG.jpg')]">
+        <div className=" md:h-screen md:flex items-center bg-[url('https://i.ibb.co/ysdL8Nv/card-Details-BG.jpg')]">
             <div
-                className="card lg:card-side bg-base-100 shadow-xl max-w-screen-xl mx-auto font-poppins text-white"
+                className="card lg:card-side bg-base-100 shadow-xl max-w-screen-xl mx-auto font-poppins text-white p-4 md:p-0"
                 style={glassCss}
             >
                 <figure>
-                    <img src={image} alt="" />
+                    <img className="md:h-[420px]" src={image} alt="" />
                 </figure>
-                <div className="card-body">
+                <div className="card-body md:w-[720px]">
                     <h2 className="card-title underline">{name}</h2>
-                    <p>{description}</p>
+                    <p className="text-sm md:text-base">{description}</p>
                     <div className="card-actions justify-between">
-                        <p className="text-2xl bg-orange-600 px-4 py-2 max-w-[120px] text-center rounded-md font-semibold">
+                        <p className="md:text-2xl underline md:no-underline md:bg-orange-600 md:px-4 md:py-2 md:max-w-[120px] text-center rounded-md md:font-semibold">
                             ${price}
                         </p>
                         <button
                             onClick={handleAddToCart}
-                            className="px-4 py-2 rounded-md bg-orange-600"
+                            className="md:px-4 md:py-2 rounded-md md:bg-orange-600 underline md:no-underline"
                         >
                             Add to cart
                         </button>
