@@ -40,7 +40,7 @@ const ProductDetails = () => {
     };
 
     const handleAddToCart = () => {
-        fetch("http://localhost:4001/brandShopCarts", {
+        fetch("https://assignment-10-brand-shop-server-hcr1i0t18-i-salim079.vercel.app/brandShopCarts", {
             method: "GET",
         })
             .then((res) => res.json())
@@ -54,7 +54,7 @@ const ProductDetails = () => {
                         position: "top-center",
                     });
                 } else {
-                    fetch("http://localhost:4001/brandShopCarts", {
+                    fetch("https://assignment-10-brand-shop-server-hcr1i0t18-i-salim079.vercel.app/brandShopCarts", {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",

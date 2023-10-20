@@ -26,7 +26,7 @@ const AddProduct = () => {
             bannerImage,
         };
 
-        fetch("http://localhost:4001/brands", {
+        fetch("https://assignment-10-brand-shop-server-hcr1i0t18-i-salim079.vercel.app/brands", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

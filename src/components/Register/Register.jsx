@@ -74,7 +74,7 @@ const Register = () => {
                 console.log(error.message);
             });
 
-        fetch("http://localhost:4001/brandsShopUsers", {
+        fetch("https://assignment-10-brand-shop-server-hcr1i0t18-i-salim079.vercel.app/brandsShopUsers", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
