@@ -99,7 +99,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-2xl text-gray-800 font-orbitron font-black">
+                    <a className="btn btn-ghost normal-case md:text-2xl text-gray-800 font-orbitron font-black">
                         E-TECH
                     </a>
                 </div>
@@ -113,16 +113,16 @@ const Navbar = () => {
                                 <div>
                                     {user?.photoURL ? (
                                         <img
-                                            className="w-10 h-10 rounded-full"
+                                            className="md:w-10 md:h-10 w-8 h-8 rounded-full"
                                             src={user?.photoURL}
                                         />
                                     ) : (
                                         <BiSolidUserCircle className="text-5xl text-black"></BiSolidUserCircle>
                                     )}
                                 </div>
-                                <div className="ml-4">
+                                <div className="ml-4 md:mr-4">
                                     {user?.displayName ? (
-                                        <p className="mr-3 text-black text-base font-poppins underline">
+                                        <p className=" md:text-black text-xs md:text-base font-poppins underline">
                                             {user?.displayName}
                                         </p>
                                     ) : (
@@ -132,7 +132,7 @@ const Navbar = () => {
                             </div>
                             <button
                                 onClick={handleSignOut}
-                                className="px-4 py-2 bg-orange-600 text-base text-white font-semibold font-poppins"
+                                className="md:px-4 md:py-2 md:bg-orange-600 text-sm md:text-base md:text-white md:font-semibold text-black font-poppins underline md:no-underline"
                             >
                                 Log Out
                             </button>

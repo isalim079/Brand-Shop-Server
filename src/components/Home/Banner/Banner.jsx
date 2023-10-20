@@ -12,7 +12,7 @@ const Banner = () => {
     }, []);
 
     return (
-        <div className="md:mb-[630px] mb-[460px] ">
+        <div className="md:mb-[630px] mb-[490px]">
             <div className="relative">
                 <img className="bg-cover h-screen w-full absolute brightness-50 md:brightness-100 -z-50" src="https://i.ibb.co/cbybc4V/banner3-01-01.jpg" alt="" />
                 <div className="text-white relative md:text-right text-center  md:max-w-screen-xl md:mx-auto font-poppins uppercase md:top-72 top-52 ">

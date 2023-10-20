@@ -16,7 +16,7 @@ const SixBrand = () => {
     const brandFilter = brandProducts.filter(
         (brandProduct) => brandProduct.brand === brands
     );
-    console.log(brandFilter);
+    // console.log(brandFilter);
 
     useEffect(() => {
         Aos.init({
@@ -61,13 +61,13 @@ const SixBrand = () => {
             </div>
             <div>
                 <h2
-                    className="text-5xl font-bold font-poppins uppercase underline text-center text-gray-700 cursor-pointer mt-20"
+                    className="md:text-5xl text-2xl font-bold font-poppins uppercase underline text-center text-gray-700 cursor-pointer md:mt-20"
                     data-aos="flip-right"
                 >
                     Product List
                 </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 max-w-screen-xl mx-auto md:mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 max-w-screen-xl mx-auto md:mt-16 p-5 md:p-0 gap-5">
                 {brandProducts.map((brandProduct) => (
                     <SixBrandCard
                         brandProduct={brandProduct}

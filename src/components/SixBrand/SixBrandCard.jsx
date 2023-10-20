@@ -10,7 +10,8 @@ const SixBrandCard = ({ brandProduct }) => {
     const { brands } = useParams();
     // console.log(brands);
 
-    const { name, brand, image, productType, price, rating, _id } = brandProduct;
+    const { name, brand, image, productType, price, rating, _id } =
+        brandProduct;
 
     useEffect(() => {
         Aos.init({
@@ -37,18 +38,18 @@ const SixBrandCard = ({ brandProduct }) => {
                                         />
                                     </figure>
                                     <div className="card-body">
-                                        <div className="flex items-center justify-between mb-5">
+                                        <div className="md:flex items-center justify-between mb-5">
                                             <div>
-                                                <h2 className="card-title">
+                                                <h2 className="md:card-title">
                                                     {name}
-                                                    <div className="badge bg-green-500 text-white">
+                                                    <div className="ml-3 md:ml-0 badge bg-green-500 text-white">
                                                         {brand}
                                                     </div>
                                                 </h2>
                                             </div>
 
                                             <div>
-                                                <p className="text-xl">
+                                                <p className="md:text-xl mt-3 md:mt-0">
                                                     <span className="font-bold">
                                                         Rating:
                                                     </span>{" "}
@@ -62,26 +63,30 @@ const SixBrandCard = ({ brandProduct }) => {
                                         <p></p>
                                         <div className="card-actions justify-between items-center">
                                             <div>
-                                                <Link to={`/productDetails/${_id}`}>
-                                                
-                                                <button className="px-4 py-2 bg-orange-500 rounded-md text-white mr-5 hover:bg-orange-600">
-                                                    Details
-                                                </button>
-                                                
+                                                <Link
+                                                    to={`/productDetails/${_id}`}
+                                                >
+                                                    <button className="md:px-4 md:py-2 md:bg-orange-500 md:rounded-md md:text-white text-black underline md:no-underline mr-5 md:hover:bg-orange-600">
+                                                        Details
+                                                    </button>
                                                 </Link>
-                                                <button className="px-4 py-2 bg-orange-500 rounded-md text-white hover:bg-orange-600">
-                                                    Update
-                                                </button>
+                                                <Link
+                                                    to={`/updateProducts/${_id}`}
+                                                >
+                                                    <button className="md:px-4 md:py-2 md:bg-orange-500 md:rounded-md md:text-white text-black underline md:no-underline mr-5 md:hover:bg-orange-600">
+                                                        Update
+                                                    </button>
+                                                </Link>
                                             </div>
                                             <div>
                                                 <div className="badge badge-outline mr-5">
-                                                    <p className="font-semibold ">
+                                                    <p className="md:font-semibold ">
                                                         {" "}
                                                         {productType}
                                                     </p>
                                                 </div>
                                                 <div className="badge badge-outline">
-                                                    <p className="font-bold text-xl">
+                                                    <p className="md:font-bold md:text-xl">
                                                         ${price}
                                                     </p>
                                                 </div>
@@ -93,7 +98,7 @@ const SixBrandCard = ({ brandProduct }) => {
                         </div>
                     </>
                 ) : (
-                   ""
+                    ""
                 )}
             </div>
         </div>

@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AuthContext } from "../Router/AuthProvider";
 
 const ProductDetails = () => {
+    const {user} = useContext(AuthContext)
     const { brands } = useParams();
     const productDetails = useLoaderData();
     // console.log(productDetails);
@@ -14,6 +17,18 @@ const ProductDetails = () => {
     // eslint-disable-next-line no-unused-vars
     const { name, image, productType, price, description, brand, rating } =
         findCards;
+
+        const productsData = {
+            email: user.email,
+            name: findCards.name,
+            image: findCards.image,
+            productType: findCards.productType,
+            price: findCards.price,
+            description: findCards.description,
+            brand: findCards.brand,
+            rating: findCards.rating,
+            
+        }
 
     const glassCss = {
         background: "rgba( 255, 255, 255, 0.2 )",
@@ -44,7 +59,7 @@ const ProductDetails = () => {
                         headers: {
                             "content-type": "application/json",
                         },
-                        body: JSON.stringify(findCards),
+                        body: JSON.stringify(productsData),
                     })
                         .then((res) => res.json())
                         .then((data) => {

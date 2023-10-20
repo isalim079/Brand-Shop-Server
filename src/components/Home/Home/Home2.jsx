@@ -19,14 +19,14 @@ const Home2 = () => {
     }, []);
 
     return (
-        <div>
+        <div className="overflow-hidden">
             <div>
                 <Banner></Banner>
             </div>
 
             <div>
                 <div>
-                    <h2 data-aos="fade-up" className="font-poppins text-3xl md:text-5xl text-center md:my-12 font-semibold cursor-pointer text-orange-600"><span className="underline font-bold hover:text-orange-700 hover:duration-500">BRAND</span> NAMES</h2>
+                    <h2 data-aos="fade-up" className="font-poppins text-3xl md:text-5xl text-center md:my-12 font-semibold cursor-pointer text-orange-600"><span className="underline font-bold hover:text-orange-700 hover:duration-500 ">BRAND</span> NAMES</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 max-w-screen-xl mx-auto gap-5 md:gap-10 mb-20 p-3 md:p-0">
                     {brandCategories.map((brandCategory) => (

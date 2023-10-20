@@ -9,6 +9,7 @@ import Register from "../Register/Register";
 import SixBrand from "../SixBrand/SixBrand";
 import ProductDetails from "../SixBrand/ProductDetails";
 import AddToCart from "../AddToCart/AddToCart";
+import UpdateProduct from "../UpdateProduct/UpdateProduct";
 
 const Router = createBrowserRouter([
     {
@@ -58,7 +59,16 @@ const Router = createBrowserRouter([
                         <AddToCart></AddToCart>
                     </PrivateRoute>
                 ),
-                loader: () => fetch("http://localhost:4001/brandShopCarts")
+                loader: () => fetch("http://localhost:4001/brandShopCarts"),
+            },
+            {
+                path: "/updateProducts/:id",
+                element: (
+                    <PrivateRoute>
+                        <UpdateProduct></UpdateProduct>
+                    </PrivateRoute>
+                ),
+                loader: ({params}) => fetch(`http://localhost:4001/brands/${params.id}`)
             },
         ],
     },

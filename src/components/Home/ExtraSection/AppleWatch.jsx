@@ -16,7 +16,7 @@ const AppleWatch = () => {
             <div>
                 <div className="relative">
                     <img className="bg-cover md:h-screen md:w-full absolute brightness-50 md:brightness-100 -z-50" src="https://i.ibb.co/zVZ0hgG/apple-Watch.jpg" data-aos="fade-left" alt="" />
-                    <div className="h-screen mb-20 flex justify-center md:items-center" data-aos="fade-up">
+                    <div className="h-screen -mb-72 md:mb-20 flex justify-center md:items-center" data-aos="fade-up">
                         <div className="font-poppins text-white text-center">
                             <div className="pt-10 flex justify-center items-center gap-1 md:bg-gray-700 md:px-5 md:py-3 md:pt-3 mb-2 rounded-md cursor-pointer md:hover:bg-gray-800" data-aos="fade-up">
                             <AiFillApple className="text-2xl md:text-5xl "></AiFillApple>
